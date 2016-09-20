@@ -1,0 +1,41 @@
+﻿<Window x:Class="Booking1._0.FormView.LoginPark"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginPark" Height="768" Width="1366" WindowState="Maximized" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+       <!-- <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Margin="0,15,180,0" >用户注册</Label>
+        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="0,18,0,0" >用户名</Label>
+        <TextBox Grid.Row="2" Grid.Column="1"  Margin="60,20,180,20" FontSize="15"></TextBox>-->
+        <Canvas Name="canvasl" Grid.Row="1" Grid.Column="1">
+            <!--   <Label Canvas.Left="270" Canvas.Top="5" Height="23" Width="75" Name="ResUser" >用户注册</Label>-->
+            <TextBlock Canvas.Left="270" Canvas.Top="5" Height="23" Width="75"><Hyperlink Click="Hyperlink_Click"> <Run Text="用户注册"/> </Hyperlink></TextBlock>
+            <Label Canvas.Left="70" Canvas.Top="48" Height="23"  >用户名</Label>
+            <TextBox  Canvas.Left="130" Canvas.Top="48" Height="23" Name="TxtUsername" Width="150"></TextBox>
+            <Label Canvas.Left="70" Canvas.Top="80" Height="23"  >密码</Label>
+            <PasswordBox Canvas.Left="130" Canvas.Top="80" Height="23" Width="150" Name="TxtPassword"></PasswordBox>
+            <Label Canvas.Left="70" Canvas.Top="112" Height="23"  >类别</Label>
+            <ComboBox Name="RegisterType" Canvas.Left="130" Canvas.Top="112" Height="23" Width="150" SelectionChanged="RegisterType_SelectionChanged" ></ComboBox>
+            <Button Name="BTlogin" Canvas.Left="160" Canvas.Top="144" Height="23" Width="80" Click="BTlogin_Click">登录</Button>
+            <!--  <TextBox Canvas.Left="90" Canvas.Top="10" Height="23" Name="txtname" Width="120"></TextBox>
+            <Label Canvas.Left="10" Canvas.Top="10" Height="28" Name="lblName" Width="82">请输入姓名:</Label>
+            <Label Canvas.Left="10" Canvas.Top="42" Height="28" Name="lblgender" Width="82">请选择性别</Label>
+            <ComboBox Canvas.Left="90" Canvas.Top="42" Height="23" Name="cbgender" Width="120" SelectedIndex="0">
+                <ComboBoxItem>男</ComboBoxItem>
+                <ComboBoxItem>女</ComboBoxItem>
+            </ComboBox>
+            <Button Canvas.Left="38" Canvas.Top="95" Height="23" Name="button1" Width="75">确定</Button>
+            <Button Canvas.Left="158" Canvas.Top="95" Height="23" Name="button2" Width="75">取消</Button>-->
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,189 @@
+﻿<Window x:Class="Booking1._0.FormView.ParkForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="ParkForm" Height="615" Width="1135" WindowState="Maximized" Closed="Window_Closed" MinHeight="615" MinWidth="1135" WindowStyle="None">
+    <Grid Name="Grid0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--抬头-->
+        <Grid Grid.Row="0" Name="StartGrid" Background="#c62f2f">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" HorizontalAlignment="Left">
+                <Image HorizontalAlignment="Left" Source="..\Img\BookingLogo.png" Width="160" Height="40"></Image>
+            </Grid>
+            <Grid Grid.Column="3" HorizontalAlignment="Left">
+                <Button Name="BtnChangeColor" Width="40" Height="40" Style="{StaticResource ChangeMouse}" Click="BtnChangeColor_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Img\changecolor.png" Stretch="Fill"></ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Name="tianjiahuiyuan" Width="36" Height="36" Style="{StaticResource ChangeMouse}" Margin="120,0,0,0" Click="tianjiahuiyuan_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Img\settingLogo.png" Stretch="Fill"></ImageBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid Grid.Column="4" HorizontalAlignment="Right">
+                <Button Width="30" Height="30" Click="CloseWindow_Click" Margin="0,0,10,0" Style="{StaticResource ChangeMouse}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="..\Img\FormClose.png" Stretch="Fill"></ImageBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
+        <!--结束标记-->
+        <Grid Name="MStackPanel" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15*"></RowDefinition>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="10*">
+                </RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="23*" ></ColumnDefinition>
+                <ColumnDefinition Width="65*" ></ColumnDefinition>
+                <ColumnDefinition Width="35*" ></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+                    <ColumnDefinition Width="10*"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <WindowsFormsHost Background="Black" Grid.Column="0" Margin="0,0,0,3">
+                    <wf:PictureBox x:Name="pictureBox1" Width="300" Height="300" BackgroundImageLayout="Stretch" Dock="Fill" SizeMode="StretchImage"></wf:PictureBox>
+                </WindowsFormsHost>
+                <WindowsFormsHost  Background="Black"  Grid.Column="1"  Margin="10,0,0,3">
+                    <wf:PictureBox x:Name="pictureBox2" MinimumSize="300,300" BackgroundImageLayout="Stretch" Dock="Fill" SizeMode="StretchImage"></wf:PictureBox>
+                </WindowsFormsHost>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="6*"></RowDefinition>
+                    <RowDefinition Height="14*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="6*"></ColumnDefinition>
+                    <ColumnDefinition Width="18*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                    <ColumnDefinition Width="17*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                    <ColumnDefinition Width="8*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Style="{StaticResource fontstyle}"  Content="入车车牌" Grid.Row="0" Grid.Column="0"></Label>
+                <TextBox Name="intoCar" Grid.Row="0"  Grid.Column="1" Margin="3,0,0,0" FontSize="22" HorizontalContentAlignment="Center" IsEnabled="False"></TextBox>
+                <Button Style="{StaticResource Button111}" Content="修改车牌" Name="changLicInto" Grid.Row="0"  Grid.Column="2" Margin="5,0,0,0" Click="changeLicInto_Click"/>
+                <Button Name="btnSure1" Style="{StaticResource Button111}" Content="确认放行" Grid.Row="0"  Grid.Column="3" Margin="5,0,0,0" Click="intoYes_Click" ></Button>
+
+                <Label Style="{StaticResource fontstyle}"  Content="出车车牌" Grid.Row="0" Grid.Column="4" Margin="10,0,0,0"></Label>
+                <TextBox Name="outCar" Grid.Row="0"  Grid.Column="5" Margin="3,0,0,0" FontSize="22" HorizontalContentAlignment="Center" IsEnabled="False"></TextBox>
+                <Button  Style="{StaticResource Button111}" Content="修改车牌" Name="changLicOut" Grid.Row="0"  Grid.Column="6" Margin="5,0,0,0" Click="changLicOut_Click"/>
+                <Button  Name="btnSuer2" Style="{StaticResource Button111}" Content="确认车牌" Grid.Row="0"  Grid.Column="7" Margin="5,0,0,0" Click="OutYes_Click" ></Button>
+
+                <Label Style="{StaticResource fontstyle}"  Content="车牌小图" Grid.Row="2" Grid.Column="0" Margin="0,15,0,0" ></Label>
+                <WindowsFormsHost Background="Gray" Grid.Row="2" Grid.Column="1" Margin="3,3,0,3" >
+                    <wf:PictureBox x:Name="pictureBox3" BackgroundImageLayout="Stretch" Dock="Fill" SizeMode="StretchImage"></wf:PictureBox>
+                </WindowsFormsHost>
+                <Button Name="btnRefresh1"  Style="{StaticResource Button111}" Content="重拍" Grid.Row="2"  Grid.Column="2" Grid.ColumnSpan="2" Margin="5,3,0,3" Click="Retakes1_Click" />
+
+                <Label Style="{StaticResource fontstyle}"  Content="车牌小图" Grid.Row="2" Grid.Column="4" Margin="10,15,0,0"></Label>
+                <WindowsFormsHost Background="Gray" Grid.Row="2" Grid.Column="5" Margin="3,3,0,3" >
+                    <wf:PictureBox x:Name="pictureBox4" ></wf:PictureBox>
+                </WindowsFormsHost>
+                <Button  Name="btnRefresh2" Style="{StaticResource Button111}" Content="重拍" Grid.Row="2"  Grid.Column="6" Grid.ColumnSpan="2" Margin="5,3,0,3" Click="Retakes2_Click" />
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="#fff3f3">
+                <Grid  Grid.Row="0" Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="12*" ></RowDefinition>
+                        <RowDefinition Height="18*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Name="border1" Style="{StaticResource borderstyle1}">
+                        <Canvas Grid.Row="0">
+                            <TextBlock FontFamily="黑体" Foreground="#c62f2f" FontSize="15" Name="Daytime" Canvas.Left="100" Canvas.Top="10" Height="20" Loaded="Daytime_Loaded" >当前时间</TextBlock>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="29" Height="28" >值班人员：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="WorkerName" Canvas.Left="104" Canvas.Top="28" Height="28" >可口可乐</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="55" Height="28" >现金总额：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="PriceAll" Canvas.Left="104" Canvas.Top="54" Height="28" >1154.00</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="81" Height="28" >剩余车位：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="CarCount" Canvas.Left="104" Canvas.Top="80" Height="28" >126</Label>
+                            <Button  Style="{StaticResource Button111}" Name="ChangerWorker" Canvas.Left="50" Canvas.Top="110" Height="28" Width="80" Click="ChangerWorker_Click">交班</Button>
+                            <Button  Style="{StaticResource Button111}" Name="LayoutWorker" Canvas.Left="150" Canvas.Top="110" Height="28" Width="80" Click="LayoutWorker_Click">注销</Button>
+                            <Button  Style="{StaticResource Button111}" Name="StartCamera" Canvas.Left="240" Canvas.Top="110" Height="28" Width="70" Click="StartCamera_Click">重启摄像头</Button>
+                        </Canvas>
+                    </Border>
+                    <Border Name="border2" Grid.Row="1" Style="{StaticResource borderstyle1}">
+                        <Canvas Grid.Row="1" >
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="134" Canvas.Top="7" Height="28" >车辆信息</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="40" Height="28" >车辆车牌：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="lblCarlicense" Canvas.Left="105" Canvas.Top="40" Height="28" >可口可乐</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="70" Height="28" >车主类型：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="MemberType" Canvas.Left="105" Canvas.Top="70" Height="28" >可口可乐</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="100" Height="28" >停留时间：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="lblStopTime" Canvas.Left="105" Canvas.Top="100" Height="28" >可口可乐</Label>
+                            <Label Style="{StaticResource fontstyle}"  Canvas.Left="25" Canvas.Top="130" Height="28" >停车费用：</Label>
+                            <Label Style="{StaticResource fontstyle2}"  Name="lblPrice" Canvas.Left="105" Canvas.Top="130" Height="28" >可口可乐</Label>
+                            <ComboBox Name="CbxTicket" Canvas.Left="105" Canvas.Top="175" Width="180" Height="28" IsEnabled="False" SelectionChanged="CbxTicket_SelectionChanged"></ComboBox>
+                            <Button Style="{StaticResource Button111}" Name="BTCoupon" Canvas.Left="25" Canvas.Top="175" Height="28" Width="70" Click="BTCoupon_Click" >优惠券</Button>
+                        </Canvas>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2" Background="#fff3f3">
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Border Name="border3" Style="{StaticResource borderstyle1}">
+                        <Canvas>
+                            <TextBlock Canvas.Left="30" Canvas.Top="12">免费原因：</TextBlock>
+                            <ComboBox Canvas.Left="95" Canvas.Top="10" Width="130" Height="20"></ComboBox>
+                            <Button Style="{StaticResource Button111}" Name="BtnOK" Canvas.Left="230" Canvas.Top="10" Width="80" Height="20">免费放行</Button>
+                            <TextBlock Canvas.Left="30" Canvas.Top="42">收费金额</TextBlock>
+                            <TextBox Name="Lostmoney" Canvas.Left="95" Canvas.Top="40" Width="130" Height="20" IsEnabled="False"></TextBox>
+                            <CheckBox Canvas.Left="230" Canvas.Top="42" Width="80" Height="20">打印发票</CheckBox>
+                            <Button Style="{StaticResource Button111}" Name="ChargeRelease" Canvas.Left="120" Canvas.Top="70" Width="80" Height="28" Click="ChargeRelease_Click">收费放行</Button>
+                        </Canvas>
+
+                    </Border>
+                </Grid>
+            </Grid>
+            <ListBox Name="listBox1" Width="Auto" Grid.Row="2"  Grid.ColumnSpan="2" Background="#fff3f3"/>
+        </Grid>
+        <Popup x:Name="ChangeTheme" Width="205" Height="200"
+               StaysOpen="False"
+               IsOpen="False"
+               AllowsTransparency="True"
+               PopupAnimation="Slide"
+               PlacementTarget="{Binding ElementName= BtnChangeColor}"
+               Placement="Bottom">
+            <Grid Background="White">
+                <TabControl Background="Gray">
+                    <TabItem Header="纯色">
+                        <Canvas Background="White">
+                            <Separator Canvas.Left="4" Canvas.Top="10" Background="Gray" Height="1" Width="190" VerticalAlignment="Top"/>
+                            <Button Name="colorBlue1" Canvas.Left="4" Canvas.Top="25" Width="60" Height="60" Background="#4791eb" Click="colorBlue1_Click"></Button>
+                            <Button Name="colorBlue2" Canvas.Left="68" Canvas.Top="25" Width="60" Height="60" Background="#c62f2f" Click="colorBlue2_Click"></Button>
+                            <Button Name="colorOrange" Canvas.Left="132" Canvas.Top="25" Width="60" Height="60" Background="#ff8f57" Click="colorOrange_Click"></Button>
+                            <Button Name="colorGreen" Canvas.Left="4" Canvas.Top="100" Width="60" Height="60" Background="#2bb669" Click="colorGreen_Click"></Button>
+                            <Button Name="colorGray" Canvas.Left="68" Canvas.Top="100" Width="60" Height="60" Background="#9d733c" Click="colorGray_Click"></Button>
+                            <Button Name="colorZi"  Canvas.Left="132" Canvas.Top="100" Width="60" Height="60" Background="#9d3c5e" Click="colorZi_Click"></Button>
+                        </Canvas>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Popup>
+    </Grid>
+</Window>
